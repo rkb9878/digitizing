@@ -1,0 +1,781 @@
+// @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500&display=swap');
+
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import "_bourbon.scss";
+@import "_mixins.scss";
+// Configuration
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/utilities";
+
+/*--------------------------------------------------------------
+  Extand
+--------------------------------------------------------------*/
+
+%font-theme {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-display: swap;
+}
+
+%bg-none {
+    background-image: none;
+    background-color: transparent;
+}
+%title-main{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700!important;
+}
+
+@mixin custom-scroll {
+    /* width */
+     ::-webkit-scrollbar {
+        width: 5px;
+    }
+    /* Track */
+     ::-webkit-scrollbar-track {
+        background: rgba($color: $primary, $alpha: 0.1);
+    }
+    /* Handle */
+     ::-webkit-scrollbar-thumb {
+        background: rgba($color: $green, $alpha: 0.5);
+    }
+    /* Handle on hover */
+     ::-webkit-scrollbar-thumb:hover {
+        background: rgba($color: $green, $alpha: 1);
+    }
+}
+
+@mixin create-btn($name,
+$color-name,
+$text-color,
+$color-hover-name,
+$text-hover-color) {
+    .btn-link {
+        &.text-underline {
+            text-decoration: underline;
+        }
+    }
+    .btn-link-#{$name} {
+        color: $color-name!important;
+        @extend %bg-none;
+        &.btn-outline-primary:not(:disabled):not(.disabled).active,
+        &.btn-outline-primary:not(:disabled):not(.disabled):active,
+        &.show>.btn-outline-primary.dropdown-toggle,
+        &:active,
+        &:focus,
+        &:hover {
+            color: $color-hover-name!important;
+            text-decoration: underline;
+            @extend %bg-none;
+        }
+        &.text-underline {
+            text-decoration: underline;
+        }
+    }
+    .btn-link-deep-#{$name} {
+        color: $color-hover-name!important;
+        @extend %bg-none;
+        &.btn-outline-primary:not(:disabled):not(.disabled).active,
+        &.btn-outline-primary:not(:disabled):not(.disabled):active,
+        &.show>.btn-outline-primary.dropdown-toggle,
+        &:active,
+        &:focus,
+        &:hover {
+            color: $color-hover-name!important;
+            text-decoration: underline;
+            @extend %bg-none;
+        }
+        &.text-underline {
+            text-decoration: underline;
+        }
+    }
+    .btn-outline-#{$name} {
+        color: $color-hover-name!important;
+        @extend %bg-none;
+        border-color: $color-hover-name!important;
+        &.btn-outline-primary:not(:disabled):not(.disabled).active,
+        &.btn-outline-primary:not(:disabled):not(.disabled):active,
+        &.show>.btn-outline-primary.dropdown-toggle,
+        &:active,
+        &:focus,
+        &:hover {
+            color: $text-hover-color!important;
+            border-color: $color-hover-name!important;
+            background: $color-hover-name!important;
+        }
+    }
+    .btn-#{$name} {
+        color: $text-color!important;
+        border-color: $color-name!important;
+        background-color: $color-name!important;
+        &.btn-primary:not(:disabled):not(.disabled).active,
+        &.btn-primary:not(:disabled):not(.disabled):active,
+        &.show>.btn-primary.dropdown-toggle,
+        &:active,
+        &:focus,
+        &:hover {
+            color: $text-hover-color!important;
+            border-color: $color-hover-name!important;
+            background: $color-hover-name!important;
+        }
+    }
+    .btn-outline-blue {
+        color: $color-name!important;
+        border-color: $color-name!important;
+        &.btn-primary:not(:disabled):not(.disabled).active,
+        &.btn-primary:not(:disabled):not(.disabled):active,
+        &.show>.btn-primary.dropdown-toggle,
+        &:active,
+        &:focus,
+        &:hover {
+            color: $text-color!important;
+            border-color: $color-name!important;
+            background: $color-name!important;
+        }
+    }
+}
+
+@mixin custom-icon($icontype,
+$name,
+$size,
+$top,
+$left) {
+    @if $icontype=="sprite-icon" {
+        .#{$icontype}-#{$name} {
+            @extend %sprite-icon;
+            @include size($size);
+            display: block;
+            background-position: $left $top;
+        }
+    }
+    @else if $icontype=="fontawesome" {
+        content: $name;
+        @include size($size);
+        @include position(absolute,
+        $top null null $left);
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        text-align: center;
+    }
+    @else {
+        @warn "Unknown #{$icontype}.";
+    }
+}
+
+@mixin input-group($name,
+$unit: Null) {
+    .input-group {
+        @if $name=="rounded-pill" {
+            &.rounded-pill {
+                .input-group-text {
+                    @include rounded($unit 0 0 $unit);
+                    border-right: 0;
+                }
+                input {
+                    @include rounded(0 $unit $unit 0);
+                    border-left: 0;
+                }
+            }
+        }
+        @if $name=="rounded-0" {
+            &.rounded-0 {
+                .input-group-text {
+                    @include rounded(0);
+                }
+                input {
+                    @include rounded(0);
+                }
+            }
+        }
+        @if $name=="phone-group" {
+            &.phone-group {
+                .input-group-text {
+                    @include rounded($unit 0 0 $unit);
+                    border-right: 0;
+                    position: relative;
+                    &::after {
+                        content: " ";
+                        width: 1px;
+                        height: 60%;
+                        background-color: #929394;
+                        @include position(absolute,
+                        20% 3px 20% null);
+                    }
+                    select {
+                        max-width: 70px!important;
+                    }
+                }
+                input {
+                    @include rounded(0 $unit $unit 0);
+                    border-left: 0;
+                    min-height: 38px;
+                }
+            }
+        }
+        @if $name=="border-0" {
+            &.border-0 {
+                .input-group-text {
+                    border: 0;
+                }
+                input {
+                    border: 0;
+                }
+            }
+        }
+        @if $name=="border-bottom" {
+            &.border-bottom {
+                .input-group-text {
+                    border: 0;
+                    border-right: 0;
+                    border-bottom: $unit solid $gray;
+                }
+                input {
+                    border: 0;
+                    border-left: 0;
+                    border-bottom: $unit solid $gray;
+                }
+            }
+        }
+    }
+}
+
+@mixin carousel-indicators($name,
+$unit: Null) {
+    .carousel-indicators {
+        li {
+            @include size(15px);
+            background-color: $primary;
+            @include rounded(1px);
+            border: 2px solid $primary;
+            &.active {
+                border: 2px solid $primary;
+                background-color: transparent;
+            }
+        }
+        @if $name=="rounded-circle" {
+            &.rounded-circle {
+                li {
+                    @include rounded(50%);
+                }
+            }
+        }
+        @if $name=="rounded-pill" {
+            &.rounded-pill {
+                li {
+                    @include rounded($unit 0 0 $unit);
+                }
+            }
+        }
+        @if $name=="rounded-0" {
+            &.rounded-0 {
+                li {
+                    @include rounded(0);
+                }
+            }
+        }
+        @if $name=="rounded" {
+            &.rounded-#{$name} {
+                li {
+                    @include rounded($unit);
+                }
+            }
+        }
+    }
+}
+
+@mixin pagination($name,
+$unit: Null) {
+    .pagination {
+        .page-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @if $name=="rounded-circle" {
+            &.rounded-circle {
+                .page-link {
+                    @include rounded(50%);
+                }
+            }
+        }
+        @if $name=="rounded-pill" {
+            &.rounded-pill {
+                .page-link {
+                    @include rounded($unit 0 0 $unit);
+                }
+            }
+        }
+        @if $name=="rounded-0" {
+            &.rounded-0 {
+                .page-link {
+                    @include rounded(0);
+                }
+            }
+        }
+        @if $name=="rounded" {
+            &.rounded-#{$name} {
+                .page-link {
+                    @include rounded($unit);
+                }
+            }
+        }
+    }
+}
+
+@mixin create-pagination-btn($name,
+$color-name,
+$text-color,
+$color-hover-name,
+$text-hover-color) {
+    .pagination-outline-#{$name} {
+        color: $color-name;
+        @extend %bg-none;
+        border-color: $color-name;
+        &.btn-outline-primary:not(:disabled):not(.disabled).active,
+        &.btn-outline-primary:not(:disabled):not(.disabled):active,
+        &.show>.btn-outline-primary.dropdown-toggle,
+        &:active,
+        &:focus,
+        &:hover {
+            color: $text-hover-color;
+            border-color: $color-hover-name;
+            background: $color-hover-name;
+        }
+    }
+    .pagination-#{$name} {
+        color: $text-color;
+        border-color: $color-name;
+        background-color: $color-name;
+        &.btn-primary:not(:disabled):not(.disabled).active,
+        &.btn-primary:not(:disabled):not(.disabled):active,
+        &.show>.btn-primary.dropdown-toggle,
+        &:active,
+        &:focus,
+        &:hover {
+            color: $text-hover-color;
+            border-color: $color-hover-name;
+            background: $color-hover-name;
+        }
+    }
+}
+
+@mixin owl-nav($name: null,
+$unit: null,
+$top: null,
+$right: null,
+$orientation: "horizontal",
+$split: "true") {
+    .owl-prev {
+        padding-right: 10px;
+    }
+    .owl-next,
+    .owl-prev {
+        width: 30px;
+        font-size: 0.5rem;
+        height: 30px;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        // background-color: #E0E0E0!important;
+        position: absolute;
+        border-radius: 50%!important;
+        bottom: 0px;
+        right: 10%;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+        // &:after {
+        //     @include custom-icon("fontawesome",
+        //     "\f30a",
+        //     40px,
+        //     50%,
+        //     -5px);
+        //     @include transform(translateY(-50%));
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        //     color: white;
+        // }
+        &.disabled {
+            background-color: $gray-700!important;
+        } 
+    } 
+    @if $name=="rounded-circle" {
+        .owl-next,
+        .owl-prev {
+            @include rounded(5%);
+            span {
+                color: white;
+            }
+        }
+    }
+    @if $name=="rounded" {
+        .owl-next,
+        .owl-prev {
+            @include rounded($unit);
+        }
+    }
+    @if $top=="start" {
+        .owl-nav {
+            top: 0;
+        }
+    }
+    @else if $top=="center" {
+        .owl-nav {
+            top: calc(50% - 54px);
+            transform: translateY(-50%);
+        }
+    }
+    @else if $top=="end" {
+        .owl-nav {
+            bottom: 0;
+        }
+    }
+    @if $right=="start" {
+        .owl-nav {
+            left: -15px;
+        }
+    }
+    @else if $right=="center" {
+        .owl-nav {
+            right: calc(50%);
+            transform: translateY(-50%);
+        }
+    }
+    @else if $right=="end" {
+        .owl-prev {
+            left: -35px;
+        }
+        .owl-next {
+            right: -35px;
+        }
+    }
+}
+
+@mixin owl-dots {
+    .owl-dots {
+        -ms-flex-pack: center!important;
+        justify-content: center!important;
+        display: -ms-flexbox!important;
+        display: flex!important;
+        .owl-dot {
+            @include size(8px);
+            margin: 5px;
+            @include rounded(50%);
+            background-color: $gray!important;
+            &.active {
+                background-color: $primary!important;
+            }
+        }
+    }
+}
+
+@mixin social-icons() {
+    .social-icons {
+        a,
+        .btn {
+            @include margin(0rem 0.5rem 1rem null);
+            @include size(45px);
+            @include last-child() {
+                margin-right: 0;
+            }
+            justify-content: center;
+            background-color: $deep-primary;
+            @include rounded(50%);
+            span,
+            i {
+                align-self: center;
+                font-size: 1.25rem;
+                color: $white;
+            }
+            @include hover {
+                span,
+                i {
+                    color: $lighter-primary;
+                }
+            }
+        }
+        &.bg-socials {
+            .facebook {
+                background-color: #3b5999;
+            }
+            .twitter {
+                background-color: #55acee;
+            }
+            .linkedin {
+                background-color: #0077b5;
+            }
+            .instagram {
+                // background-color: #eb1f81; 
+                background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+                // -webkit-text-fill-color: transparent;
+            }
+            .youtube {
+                background-color: #cd201f;
+            }
+            .google {
+                background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+        &.text-socials {
+            .facebook {
+                color: #3b5999;
+            }
+            .twitter {
+                color: #55acee;
+            }
+            .linkedin {
+                color: #0077b5;
+            }
+            .instagram {
+                background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+                -webkit-background-clip: text;
+                /* Also define standard property for compatibility */
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .youtube {
+                color: #cd201f;
+            }
+            .google {
+                background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}
+
+@mixin common-radio() {
+    .common-radio {
+        position: relative;
+        padding-left: 1.8rem;
+        input+label {
+            font-weight: 500;
+            &:before {
+                border: 2px solid $light-gray;
+                left: initial;
+                @include rounded(100%);
+                @include size(16px);
+                @include position(absolute, 3px null null 0);
+                display: block;
+                pointer-events: none;
+                content: "";
+                background-color: #fff;
+            }
+            &:after {
+                left: initial;
+                border: 5px solid $white;
+                content: "";
+                // opacity: 0;
+                @include rounded(100%);
+                @include size(16px);
+                @include position(absolute, 3px null null 0);
+                @include transform(scale(0.8));
+            }
+        }
+        &-input:checked+label::after {
+            background-image: none;
+            background: $light-success;
+        }
+        &-input:checked+label::before {
+            border-color: $light-success;
+        }
+    }
+}
+
+@mixin common-checkbox() {
+    .common-checkbox {
+        &-label {
+            position: relative;
+            font-weight: 500;
+            margin-top: 6px;
+            &:before {
+                border: 1px solid $light-gray;
+                @include rounded(2px);
+                @include position(absolute,
+                50% null null -20px);
+                @include transform(translateY(-50%));
+                @include size(18px);
+                display: block;
+                pointer-events: none;
+                content: "";
+                background-color: #fff;
+            }
+            &:after {
+                // border: 3px solid $white;
+                background: transparent;
+                content: "\f00c";
+                font-size: 11px;
+                font-weight: 900;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                line-height: 1;
+                font-family: 'Font Awesome 5 Free';
+                color: $white;
+                // font-size: 2rem;
+                // opacity: 0;
+                @include position(absolute,
+                50% null null -16px);
+                @include transform(translateY(-50%));
+            }
+        }
+        &-input {
+            display: none;
+        }
+        &-input:checked+label::before {
+            background: $light-success;
+            border-color: $light-success;
+        }
+        &.checkbox-right {
+            padding-left: 0rem;
+            padding-right: 1.5rem;
+            &-label {
+                &:before {
+                    border: 1px solid $light-success;
+                    @include position(absolute,
+                    50% 0rem null null);
+                }
+                &:after {
+                    @include position(absolute,
+                    50% 4px null null);
+                }
+            }
+        }
+    }
+}
+
+@mixin custom-faq() {
+    .custom-faq {
+        .card {
+            border: 0px solid transparent;
+            margin-bottom: 0.5rem;
+        }
+        .card-header {
+            padding: 0;
+            background-color: $light-blue;
+            border: 0px solid transparent;
+            .btn {
+                position: relative;
+                color: $primary;
+                text-align: left!important;
+                display: block;
+                width: 100%;
+                border: 0px solid transparent;
+                text-decoration: none;
+                box-shadow: 0 0 0 0.2rem transparent;
+                @include padding(1rem 1.2rem);
+                @include hover() {}
+                &:after {
+                    @include custom-icon("fontawesome",
+                    "\f067",
+                    20px,
+                    55%,
+                    calc(100% - 34px));
+                    background-color: $primary;
+                    font-size: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $white;
+                    @include rounded(100%);
+                    @include transform(translateY(-50%));
+                }
+                &[aria-expanded="true"]:after {
+                    content: "\f068";
+                }
+            }
+        }
+        .card-body {
+            background-color: $light-blue;
+            padding-top: 0px;
+            border: 0px solid transparent;
+            // border-top:2px solid $primary;
+            color: $black;
+        }
+        &.drop {
+            .btn {
+                &:after {
+                    @include custom-icon("fontawesome",
+                    "\f078",
+                    20px,
+                    55%,
+                    calc(100% - 34px));
+                    background-color: transparent;
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $primary;
+                    @include rounded(100%);
+                    @include transform(translateY(-50%));
+                }
+                &[aria-expanded="true"]:after {
+                    content: "\f077";
+                }
+            }
+        }
+    }
+}
+
+@mixin custom-card {
+    .card {
+        border-color: transparent;
+        width: 100%;
+        @extend .rounded-md;
+        .custom-card {}
+    }
+}
+
+@mixin store-btn() {
+    .btn-market {
+        display: inline-block;
+        padding: .375rem 1rem;
+        padding-left: 3rem;
+        border-radius: 1rem;
+        background-position: center left .75rem;
+        background-color: black;
+        background-size: 1.5rem 1.5rem;
+        background-repeat: no-repeat;
+        text-decoration: none;
+        white-space: nowrap;
+        &-subtitle {
+            display: block;
+            margin-bottom: -.125rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: .75rem;
+        }
+        &-title {
+            display: block;
+            color: #fff;
+            font-size: 1.125rem;
+        }
+    }
+    .btn-google {
+        background-image: url("../images/icons/icon-google-play.svg");
+    }
+    .btn-apple {
+        background-image: url("../images/icons/icon-apple.svg");
+    }
+}
+ 
