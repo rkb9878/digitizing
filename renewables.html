@@ -111,13 +111,15 @@
                     <p class=" pt-2 text-white">Filter by:</p>
                 </div>
                 <div class="col-md-4 col-6">
-                    <select class="form-select" id="country" aria-label="Default select example" onchange="filterData('country')">
-                            <option value="no">Select Country</option>
-                            <option value="all">All</option>
+                    <select class="form-select" id="country" aria-label="Default select example"
+                            onchange="filterData('country')">
+                        <option value="no">Select Country</option>
+                        <option value="all">All</option>
                     </select>
                 </div>
                 <div class="col-md-4 col-6">
-                    <select class="form-select" id="tech" aria-label="Default select example"  onchange="filterData('tech')">
+                    <select class="form-select" id="tech" aria-label="Default select example"
+                            onchange="filterData('tech')">
                         <option value="no">Select Technology</option>
                         <option value="all">All</option>
                         <!--                            <option value="1">SPV</option>-->
@@ -465,22 +467,23 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModalsecond" tabindex="-1" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title title-main text-primary h1 text-uppercase fw-bold" id="exampleModalLabel"
-                    style="letter-spacing:2px;">Contact Us</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
+    <form id="form" onsubmit="return false">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title title-main text-primary h1 text-uppercase fw-bold" id="exampleModalLabel"
+                        style="letter-spacing:2px;">Contact Us</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
                     <div class="mb-3 row pb-4">
                         <div class="col-lg-4">
                             <label for="exampleInputEmail1" class="form-label">First Name*</label>
                         </div>
                         <div class="col-lg-8 pe-md-5">
-                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp">
+                            <input type="text" required class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" name="first_name">
                         </div>
                     </div>
                     <div class="mb-3 row pb-4">
@@ -488,8 +491,8 @@
                             <label for="exampleInputEmail1" class="form-label">Last Name*</label>
                         </div>
                         <div class="col-lg-8 pe-md-5">
-                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp">
+                            <input type="text" required class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" name="last_name">
                         </div>
                     </div>
                     <div class="mb-3 row pb-4">
@@ -497,8 +500,8 @@
                             <label for="exampleInputEmail1" class="form-label">E-mail*</label>
                         </div>
                         <div class="col-lg-8 pe-md-5">
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp">
+                            <input type="email" required class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" name="email">
                         </div>
                     </div>
                     <div class="mb-3 row pb-4">
@@ -507,22 +510,24 @@
                         </div>
                         <div class="col-lg-8 pe-md-5">
                             <div class="">
-                                <textarea class="form-control w-100" id="message-text"></textarea>
+                                <textarea class="form-control w-100" id="message-text" name="message"></textarea>
                             </div>
                         </div>
                     </div>
+                    <div id="outputRes"></div>
 
-                </form>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <div class="">
-                    <a href="#" class="modal-button btn-primary btn">
-                        Submit
-                    </a>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <div class="">
+                        <button class="modal-button btn-primary btn">
+                            Submit
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
+
 </div>
 
 <script src="assets/js/jquery.min.js"></script>
@@ -538,13 +543,46 @@
 
 <img src="assets/images/products/" alt="">
 <script>
+    var $contactForm = $('form');
+
+    $contactForm.on('submit', function (ev) {
+        ev.preventDefault();
+        var formsiddata = document.getElementById('form');
+        var formdata = new FormData();
+        for (var i = 0; i < formsiddata.length; i++) {
+            if ("file" == formsiddata[i].type) {
+                formdata.append(formsiddata[i].name, formsiddata[i].files[0])
+            } else {
+                formdata.append(formsiddata[i].name, formsiddata[i].value)
+            }
+        }
+        var xml = new XMLHttpRequest();
+        xml.onreadystatechange = function () {
+            if (this.status == 200 && this.readyState == 4) {
+                var output = this.response;
+                console.log(output);
+                var s= ``;
+                if (output == 'fail1') {
+                    s   = `<div class='alert alert-danger' role='alert'>Email Already exists.</div>`
+                } else if (output == 'success') {
+                    s = `<div class='alert alert-success' role='alert'>We will be contacting you soon.</div>`;
+                } else if (output == 'fail') {
+                    s = `<div class='alert alert-danger' role='alert'>Fail to save!!</div>`;
+                }
+                document.getElementById('outputRes').innerHTML=s;
+            }
+        };
+        xml.open('POST', 'http://127.0.0.1/renum/api/contact.php', true);
+        xml.send(formdata);
+    });
+
     function filterData(option) {
         var country = document.getElementById('country').value;
         var plantTech = document.getElementById('tech').value;
         console.log(option, country, plantTech)
         var option = option
-        if (country =='no' & plantTech =='no' & option!='None'){
-            option ='None'
+        if (country == 'no' & plantTech == 'no' & option != 'None') {
+            option = 'None'
         }
 
         var FilePath = "assets/images/products/";
@@ -592,8 +630,8 @@
                 var output = JSON.parse(this.response);
                 for (var i = 0; i < output.length; i++) {
                     var opt = document.createElement('option');
-                    opt.value =output[i]['country'];
-                    opt.innerHTML =output[i]['country'];
+                    opt.value = output[i]['country'];
+                    opt.innerHTML = output[i]['country'];
                     country.appendChild(opt);
                 }
 
@@ -611,8 +649,8 @@
                 var output = JSON.parse(this.response);
                 for (var i = 0; i < output.length; i++) {
                     var opt = document.createElement('option');
-                    opt.value =output[i]['tech'];
-                    opt.innerHTML =output[i]['tech'];
+                    opt.value = output[i]['tech'];
+                    opt.innerHTML = output[i]['tech'];
                     plantTech.appendChild(opt);
                 }
                 // document.getElementById('tech').innerHTML = s;
