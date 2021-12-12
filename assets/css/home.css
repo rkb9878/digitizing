@@ -17619,7 +17619,7 @@ footer .social-icons a:hover, footer .social-icons a:active, footer .social-icon
 
 .bg-blue-img {
   overflow: hidden;
-  background-image: url(../images/lightgray-img.jpg);
+  background-image: url(../images/lightgray-img-new.jpg);
   background-position: center;
   background-size: cover;
   padding: 1.25rem;
@@ -17744,7 +17744,7 @@ footer .social-icons a:hover, footer .social-icons a:active, footer .social-icon
 
 .problem-bg {
   position: relative;
-  background-image: url(../images/bg-banner-.png);
+  background-image: url(../images/bg-banner-new.png);
   background-position: center;
   background-size: cover;
   padding: 1.25rem;
@@ -17920,7 +17920,7 @@ footer .social-icons a:hover, footer .social-icons a:active, footer .social-icon
 }
 
 .gren-token {
-  background-image: url(../images/bg-banner-.png);
+  background-image: url(../images/bg-banner-new.png);
   background-position: center;
   background-size: cover;
 }
