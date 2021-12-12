@@ -572,7 +572,7 @@
                 document.getElementById('outputRes').innerHTML=s;
             }
         };
-        xml.open('POST', 'http://127.0.0.1/renum/api/contact.php', true);
+        xml.open('POST', 'http://127.0.0.1:8080/renum/api/contact.php', true);
         xml.send(formdata);
     });
 
@@ -656,7 +656,7 @@
                 // document.getElementById('tech').innerHTML = s;
             }
         };
-        xhttp.open("GET", "http://127.0.0.1/renum/api/getTech.php");
+        xhttp.open("GET", "http://127.0.0.1:8080/renum/api/getTech.php");
         xhttp.send();
     }
 

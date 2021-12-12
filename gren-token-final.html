@@ -574,7 +574,7 @@
                 document.getElementById('outputRes').innerHTML = s;
             }
         };
-        xml.open('POST', 'http://127.0.0.1/renum/api/contact.php', true);
+        xml.open('POST', 'http://127.0.0.1:8080/renum/api/contact.php', true);
         xml.send(formdata);
     });
 
@@ -620,7 +620,7 @@
                 document.getElementById('filter').innerHTML = s;
             }
         };
-        xhttp.open("GET", `http://127.0.0.1/renum/api/plant.php?country=${country}&plantech=${plantTech}&option=${option}`);
+        xhttp.open("GET", `http://127.0.0.1:8080/renum/api/plant.php?country=${country}&plantech=${plantTech}&option=${option}`);
         xhttp.send();
     }
 
@@ -639,7 +639,7 @@
 
             }
         };
-        xhttp.open("GET", "http://127.0.0.1/renum/api/getCountry.php");
+        xhttp.open("GET", "http://127.0.0.1:8080/renum/api/getCountry.php");
         xhttp.send();
     }
 
@@ -658,13 +658,13 @@
                 // document.getElementById('tech').innerHTML = s;
             }
         };
-        xhttp.open("GET", "http://127.0.0.1/renum/api/getTech.php");
+        xhttp.open("GET", "http://127.0.0.1:8080/renum/api/getTech.php");
         xhttp.send();
     }
 
-    getCountry()
-    getTech()
-    filterData('None')
+    // getCountry()
+    // getTech()
+    // filterData('None')
 </script>
 </body>
 </html>
