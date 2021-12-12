@@ -1,0 +1,289 @@
+<div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/amplus.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                A subsidiary of Petronas Group, Amplus Solar is a photovoltaic provider in India. They
+                                have connected 135 MW of PV solar to Reneum at their VEER site.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/india.png" alt=""></span>Amplus
+                                    Solar </p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary"> 135 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/thaisolar.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Thai Solar Energy has connected its HomePro distributed solar rooftop collective
+                                off-grid, including 14 individual sites across northern Thailand.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/Solstice.png"
+                                                                             alt=""></span>Thai Solar Energy</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">50 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/spenergy.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                The Nubian Suns projects of SP Energy comprise 13 solar power plants located in the
+                                Benban Solar Park, near Aswan in Egypt. CDC Investments is the portfolio owner.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/SPEnergy.png"
+                                                                             alt=""></span>SP Energy</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">50 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/songlamson.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Domestically-funded Song Lam Son La Energy’s ground mount solar project in Northern
+                                Vietnam connected to Reneum in 2020.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/SongLam.png"
+                                                                             alt=""></span>Song Lam Son La Energy </p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">30 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/solstice.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Solstice is a solar energy provider with projects throughout the Middle East. Solstice
+                                has three ground mount solar systems connected to Reneum across southern Jordan.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/SolsticeRenewable.png"
+                                                                             alt=""></span>Solstice Renewable Energy</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">10 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/energy.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, nisi commodi
+                                assumenda vitae ullam repudiandae esse corrupti provident sit earum neque across 10
+                                individual solar farms.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/Energy.png"
+                                                                             alt=""></span>Energy</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">290 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/emedesoler.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Solar Park Tamberias in Argentina, owned by Emede Solar Group, with 3.6 MW. Reneum
+                                certifies the remaining projects.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/EmedeSolar.png"
+                                                                             alt=""></span>Emede Solar</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">3.6 MWGround</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/pacificoenergy.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Japanese renewable energy developer Pacifico Energy has registered their
+                                Vietnamese-based Mui Ne mega solar project to Reneum.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/SongLam.png"
+                                                                             alt=""></span>Pacifico Energy</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">125,500kw Generated</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/harrapasolar.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Harrapa Solar commissioned the 50 MW Photovoltaic Solar Farm in eastern Pakistan in
+                                2019, which became the most advance solar farm in Pakistan.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/HarrapaSolar.png"
+                                                                             alt=""></span>Harrapa Solar </p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">50 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/gharo.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Harrapa Solar commissioned the 18 MW Photovoltaic Solar Farm in eastern Pakistan in
+                                2017, which is the first of its kind with single axis tracking.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/HarrapaSolar.png"
+                                                                             alt=""></span>Gharo Solar </p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">18 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/foresight.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Foresight is a solar investment fund out of the UK, with investments throughout Europe.
+                                Their 26MW Portuguese solar installation was the first project to connect to Reneum in
+                                2019.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/Foresight.png"
+                                                                             alt=""></span>Foresight Solar Fund</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">26 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/Bellavista.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                The farm, with a power generation of 3.29 MWp, will contribute 6.25 gigawatt hours to
+                                the Chilean electric system per year, an amount that is equivalent to the consumption
+                                needs of over 3,000 Chilean homes.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/Energy.png"
+                                                                             alt=""></span>Bellavista Solar Farm</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">26 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/catalyst.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Jointly owned by the Jordanian government, this project site is one of the highest solar
+                                radiation areas globally, and has been used as a trial for the government’s renewable
+                                energy adoption scheme.
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/SolsticeRenewable.png"
+                                                                             alt=""></span>Catalyst’s Falcon Project</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">23 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/catalystshamsuna.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Built in 2016, the project will avoid over 10.000 Tons of CO2 Emissions per year and
+                                supply energy to cover the demand of more than 9.000 households
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/SPEnergy.png"
+                                                                             alt=""></span>Catalyst’s Falcon Project</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">10 MW </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/products/hadronsolarpk.png" class="card-img-top" alt="card-img">
+                            <div class="description">
+                                Built in 2016, the project will avoid over 10.000 Tons of CO2 Emissions per year and
+                                supply energy to cover the demand of more than 9.000 households
+                            </div>
+                            <div class="title">
+                                <p class="mb-0 py-2"><span class="pe-3"><img class="flag-width"
+                                                                             src="assets/images/flegs/HarrapaSolar.png"
+                                                                             alt=""></span>Hadron Solar PK</p>
+                            </div>
+                        </div>
+                        <div class="card-body py-2 text-center">
+                            <p class="card-text mb-0 py-0 text-primary">0.65 MW </p>
+                        </div>
+                    </div>
+                </div>
